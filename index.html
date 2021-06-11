@@ -7,9 +7,7 @@
 </style>
 </head>
 <body>
-  <textarea id="the_text">
-     Hey! Im a text! I will be converted to an image
-  </textarea>
+  <textarea id="the_text">Hey! Im a text! I will be converted to an image</textarea>
   <button id="show_img_btn">Convert to Image</button>
   <div id="show_img_here"></div>
 
@@ -32,7 +30,7 @@
         canvas.height = 80;
         var ctx = canvas.getContext('2d');
         ctx.font = "30px Arial";
-        var text = $("#the_text").value();
+        var text = $("#the_text").text();
         ctx.fillText(text,10,50);
         var img = document.createElement("img");
         var link = canvas.toDataURL();
