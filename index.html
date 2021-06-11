@@ -24,9 +24,9 @@
         ctx.fillText(text,10,50);
         var img = document.createElement("img");
         var link = canvas.toDataURL();
-        img.src= link
+        img.src= canvas.toDataURL()
         $("#show_img_here").append(img);
-        window.location = link;
+        window.location = canvas.toDataURL("image/png");
       });
     };
     </script>
