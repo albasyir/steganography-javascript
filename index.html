@@ -13,6 +13,16 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
+      function downloadURI(uri, name) {
+  var link = document.createElement("a");
+  link.download = name;
+  link.href = uri;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  delete link;
+}
+      
     window.onload=function(){
       $("#show_img_btn").on("click", function () {
         var canvas = document.createElement("canvas");
@@ -26,7 +36,7 @@
         var link = canvas.toDataURL();
         img.src= canvas.toDataURL()
         $("#show_img_here").append(img);
-        window.location = canvas.toDataURL("image/png");
+        downloadURI(canvas.toDataURL("image/png"), "test.png");
       });
     };
     </script>
