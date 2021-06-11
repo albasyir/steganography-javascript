@@ -30,7 +30,7 @@
         canvas.height = 80;
         var ctx = canvas.getContext('2d');
         ctx.font = "30px Arial";
-        var text = $("#the_text").text();
+        var text = $("#the_text").val();
         ctx.fillText(text,10,50);
         var img = document.createElement("img");
         var link = canvas.toDataURL();
