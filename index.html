@@ -1,0 +1,35 @@
+<html>
+<head>
+<style>
+  canvas{
+    border: 1px solid red;
+  }
+</style>
+</head>
+<body>
+  <div id="the_text">Hey! Im a text! I will be converted to an image</div>
+  <button id="show_img_btn">Convert to Image</button>
+  <div id="show_img_here"></div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+    window.onload=function(){
+      $("#show_img_btn").on("click", function () {
+        var canvas = document.createElement("canvas");
+        canvas.width = 620;
+        canvas.height = 80;
+        var ctx = canvas.getContext('2d');
+        ctx.font = "30px Arial";
+        var text = $("#the_text").text();
+        ctx.fillText(text,10,50);
+        var img = document.createElement("img");
+        var link = canvas.toDataURL();
+        img.src= link
+        $("#show_img_here").append(img);
+        window.location = link;
+      });
+    };
+    </script>
+</body>
+</html>
+
