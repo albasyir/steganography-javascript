@@ -8,31 +8,27 @@
 
 <body>
   <div class="container">
-    <h1><i>Steganography</i> dengan Javascript</h1>
+    <div class="row">
+      <div class="col-12">
+        <label for="message">Screet</label><br />
+        <textarea style="width: 100%" type="password" id="message"></textarea>
+        </br>
 
-    <h2><i>Encode</i> sebuah gambar dengan sebuah pesan didalamnya</h2>
+        <label for="encodeInput">And choose pic</label><br />
+        <input type="file" id="encodeInput" name="encodeInput">
 
-    <label for="message" class="form-label">Pesan Rahasia</label><br />
-    <textarea class="form-control" style="width: 100%" type="password" id="message"
-      placeholder="Ketik apa saja"></textarea>
-    </br>
-
-    <label for="encodeInput" class="form-label">Lalu pilih sebuah gambar:</label><br />
-    <input class="form-control" type="file" id="encodeInput" name="encodeInput">
-
-    <div class="py-1 mt-1 text-center">
-      <canvas style="height: 150px;" id="encodeCanvas"></canvas>
-      <canvas style="display: none;" id="textCanvas"></canvas>
+        <div class="py-1 mt-1 text-center">
+          <canvas style="height: 150px;" id="encodeCanvas"></canvas>
+          <canvas style="display: none;" id="textCanvas"></canvas>
+        </div>
+      </div>
+      <div class="col-12">
+        <label for="decoderInput">Choose decode target</label><br />
+        <input type="file" id="decoderInput" name="decoderInput">
+        <canvas id="decodeCanvas"></canvas>
+      </div>
     </div>
 
-
-    <hr>
-
-    <h2><i>Decode</i> gambar yang telah di <i>encode</i></h2>
-
-    <label for="decoderInput" class="form-label">Lalu pilih sebuah gambar:</label><br />
-    <input class="form-control" type="file" id="decoderInput" name="decoderInput">
-    <canvas id="decodeCanvas"></canvas>
   </div>
   <script>
     function download(uri, name) {
